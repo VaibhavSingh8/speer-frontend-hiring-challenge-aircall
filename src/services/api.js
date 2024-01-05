@@ -43,7 +43,6 @@ export const updateMultipleCalls = async (calls) => {
   try {
     const promises = calls.map(call => updateCall(call));
 
-    console.log(promises);
     return await Promise.all(promises);
 
   } catch (err) {

@@ -12,7 +12,7 @@ const Archive = () => {
 
         setArchivedCalls(activities);
       } catch (error) {
-        console.error("An error occurred while fetching calls: ", error);
+        throw error;
       }
     };
 
@@ -28,7 +28,7 @@ const Archive = () => {
       await updateMultipleCalls(unarchivedCalls);
       setArchivedCalls([]);
     } catch (error) {
-      console.error("An error occurred while unarchiving calls: ", error);
+      throw error;
     }
   };
 
