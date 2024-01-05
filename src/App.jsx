@@ -30,7 +30,7 @@ export const appRoute = createBrowserRouter([
         element: <Archive />,
       },
       {
-        path: "/:id",
+        path: "/:elementId",
         element: <ActivityDetail />,
       },
     ],

@@ -9,7 +9,16 @@ const api = axios.create({
 export const getActivities = async () => {
   try {
     const response = await api.get('activities');
-    console.log(response.data);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+
+}
+
+export const getIdActivity = async (callId) => {
+  try {
+    const response = await api.get('activities/' + callId);
     return response.data;
   } catch (err) {
     throw err;
@@ -30,23 +39,13 @@ export const updateCall = async (call) => {
 
 //to update multiple calls
 export const updateMultipleCalls = async (calls) => {
-  const successfulUpdates = [];
-  const failedUpdates = [];
-
+  //console.log(calls)
   try {
+    const promises = calls.map(call => updateCall(call));
 
-    for (const call of calls) {
-      try {
+    console.log(promises);
+    return await Promise.all(promises);
 
-        const updatedCall = await updateCall(call);
-        successfulUpdates.push(updatedCall);
-      } catch (err) {
-
-        throw err;
-      }
-    }
-
-    return { successfulUpdates, failedUpdates };
   } catch (err) {
     throw err;
   }
