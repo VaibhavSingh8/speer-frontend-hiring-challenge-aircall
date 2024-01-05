@@ -23,17 +23,6 @@ const Nav = () => {
           >
             Calls
           </Link>
-          {/* <a
-            href="#"
-            className={`inline-block p-4 border-b-2 border-transparent rounded-t-lg ${
-              activeTab === "calls"
-                ? "text-blue-600 border-blue-600"
-                : "text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-            } focus:text-blue-600 focus:border-blue-600 focus:outline-none dark:focus:text-blue-500 dark:focus:border-blue-500`}
-            onClick={() => handleTabChange("calls")}
-          >
-            Calls
-          </a> */}
         </li>
 
         <li className="me-2">

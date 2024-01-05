@@ -40,9 +40,6 @@ const ActivityFeed = () => {
         Archive all calls
       </button>
       <div className="mx-2">
-        {calls.map((call) => (
-          <CallCard key={call.id} call={call} />
-        ))}
         {calls
           .filter((call) => !call.is_archived)
           .map((call) => (
