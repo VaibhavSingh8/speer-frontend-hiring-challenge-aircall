@@ -1,8 +1,9 @@
 import React from "react";
 import "../css/header.css";
+
 const Header = () => {
   return (
-    <header>
+    <header className="">
       <svg
         width="486px"
         height="168px"
