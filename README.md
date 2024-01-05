@@ -6,6 +6,8 @@ This project is a simple phone call management system implemented using React fo
 
 ### `api.js`
 
+#NOTE: The patch routes for updating calls and resetting calls are not working. I have tried to debug the issue, but I have not been able to resolve it. I have included the code for these routes in the code.
+
 This module contains functions for interacting with the API. It uses Axios to make HTTP requests to the server.
 
 - `getActivities`: Fetches all activities (phone calls).
