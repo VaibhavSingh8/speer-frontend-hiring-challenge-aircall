@@ -1,27 +1,10 @@
 import { useState } from "react";
-import { updateCall } from "../services/api";
 
 const CallCard = ({ call }) => {
   const [isExpanded, setExpanded] = useState(false);
 
   const handleExpandToggle = () => {
     setExpanded(!isExpanded);
-  };
-
-  const handleArchive = async () => {
-    try {
-      console.log(call);
-      if (call.is_archived === true) {
-        const archivedCall = { ...call, is_archived: false };
-        await updateCall(archivedCall);
-      }
-      const archivedCall = { ...call, is_archived: true };
-      await updateCall(archivedCall);
-
-      console.log(call);
-    } catch (error) {
-      throw new Error("An error occurred while archiving the call: ", error);
-    }
   };
 
   return (
@@ -44,13 +27,6 @@ const CallCard = ({ call }) => {
             {new Date(call.created_at).toLocaleString()}
           </li>
         </ul>
-
-        <button
-          className="text-blue-500 hover:text-blue-700 focus:outline-none"
-          onClick={handleArchive}
-        >
-          {call.is_archived ? "Unarchive" : "Archive"}
-        </button>
 
         <button
           className="text-blue-500 hover:text-blue-700 focus:outline-none"
